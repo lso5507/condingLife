@@ -36,7 +36,13 @@
       </ol>
       <div>
         <div id="tab">
-          <input type="button" value="자유게시판" onclick="runFetch('freeTable')">
+          <input type="button" value="자유게시판" onclick="
+          fetch('freeTable').then(function(response){
+            response.text().then(function(text){
+              document.querySelector('article').innerHTML = text;
+              })
+          })
+          ">
           <input type="button" value="고객상담" onclick="location.href='QATable.html'">
           <input type="button" value="이벤트" onclick="location.href='eventTable.html'">
 
@@ -45,7 +51,8 @@
           <article>
             <img src="main.jpg" id="mainImg" alt="임시용">
           </article>
-            
+
+
         </div>
 
       </div>
