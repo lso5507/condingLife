@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="utf -8">
+    <title>CodingLife</title>
+    <div id="head"><img src="head.png" id="headImg"></div>
+
+  </head>
+  <body>
+    <script>
+      function runFetch(name){
+          fetch('freeTable').then(function(response){
+            response.text().then(function(text){
+              document.querySelector('article').innerHTML = text;
+        })
+      })
+
+      }
+    </script>
+
+
+    <div id="gird">
+      <ol id="list">
+        <ul>
+          <a href="test1.html">test1</a>
+        </ul>
+
+        <ul>
+          <a href="test2.html">test2</a>
+        </ul>
+        <ul>
+          <a href="test3.html">test3</a>
+        </ul>
+      </ol>
+      <div>
+        <div id="tab">
+          <input type="button" value="자유게시판" onclick="runFetch('freeTable')">
+          <input type="button" value="고객상담" onclick="location.href='QATable.html'">
+          <input type="button" value="이벤트" onclick="location.href='eventTable.html'">
+
+        </div>
+        <div>
+          <mainZone>
+            <img src="main.jpg" id="mainImg" alt="임시용">
+          </mainZone>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
